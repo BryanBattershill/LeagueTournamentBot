@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Runs the league tournaments for the club",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BryanBattershill/LeagueTournamentBot.git"
@@ -22,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/BryanBattershill/LeagueTournamentBot/issues"
   },
-  "homepage": "https://github.com/BryanBattershill/LeagueTournamentBot#readme"
+  "homepage": "https://github.com/BryanBattershill/LeagueTournamentBot#readme",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "discord.js": "^11.5.1",
+    "erlpack": "^0.1.3",
+    "libsodium-wrappers": "^0.7.6",
+    "node-opus": "^0.3.3"
+  }
 }
