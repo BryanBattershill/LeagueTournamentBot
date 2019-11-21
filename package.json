@@ -1,30 +1,22 @@
 {
   "name": "leaguetournamentbot",
   "version": "1.0.0",
-  "description": "Runs the league tournaments for the club",
+  "description": "LeagueTournamentBot",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BryanBattershill/LeagueTournamentBot.git"
   },
-  "keywords": [
-    "Tournament",
-    "League",
-    "Game",
-    "Club",
-    "UOttawa"
-  ],
-  "author": "Bryan Battershill",
+  "author": "Bryan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BryanBattershill/LeagueTournamentBot/issues"
   },
   "homepage": "https://github.com/BryanBattershill/LeagueTournamentBot#readme",
   "dependencies": {
+    "@discordjs/uws": "^11.149.1",
     "bufferutil": "^4.0.1",
     "discord.js": "^11.5.1",
-    "erlpack": "^0.1.3",
-    "libsodium-wrappers": "^0.7.6",
-    "node-opus": "^0.3.3"
+    "sodium": "^3.0.2"
   }
 }
