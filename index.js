@@ -5,6 +5,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+
 client.on('message', msg => {
   var startCommand = '!start'
   if (msg.content.startsWith === startCommand && (msg.member.roles.find(r => r.name === "Admin")) || msg.author.id === msg.guild.ownerID) {
