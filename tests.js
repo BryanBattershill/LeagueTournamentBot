@@ -9,10 +9,20 @@ createTestUsers = (n)=>{
 }
 testAddingPlayers = ()=>{
     var tm = new TournamentManager()
-    tm.addPlayers(createTestUsers(10))
+    var users = createTestUsers(10)
+    tm.addPlayers(users)
     var ret = tm.createTeams()
     console.log(ret)
-    return ret.length==0
+    if (ret.length !== 0){
+        return false
+    }
+    var firstArr = users.slice(0,5)
+    var secondArr = users.slice(5,10)
+    for (var i = 0; i < firstArr.length; ++i) {
+        if (firstArr[i] !== tm.teams[0][i]) return false;
+        if (secondArr[i] !== tm.teams[1][i]) return false;
+    }
+    return true
 }
 
 testAddingPlayersCut = ()=>{
