@@ -2,6 +2,7 @@ const {User} = require('./src/Models')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const TournamentManager = require('./src/TournamentManager')
+const token = require('./token')
 
 const tm = new TournamentManager()
 client.on('ready', () => {
@@ -151,4 +152,4 @@ client.on('message', msg => {
   });
 });
 
-client.login("NjQ1MzIyODMyNjMyMzQ4NzAy.XfWZtw.y1dalHBJOWJQkaQrnQc9ui890Gg");
+client.login(token);
