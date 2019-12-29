@@ -50,20 +50,19 @@ class TournamentManager{
                 break
             }
         }
-        var teamNum = 1
+        var teamNum = 0
         var flag = false
         this.teams.forEach(team => {
-            for (let index = 0; index < team.length; index++) {
-                if (team[index].user===playerToR){
-                    team.splice(index,1)
-                    flag = true
-                    break
+            if (flag === false){
+                for (let index = 0; index < team.length; index++) {
+                    if (team[index].user===playerToR){
+                        team.splice(index,1)
+                        flag = true
+                        break
+                    }
                 }
+                teamNum+=1
             }
-            if (flag === true){
-                break
-            }
-            teamNum+=1
         });
         return teamNum
     }

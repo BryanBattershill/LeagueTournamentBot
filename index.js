@@ -128,7 +128,7 @@ const quitCommand = (args,msg) => {
   var team = tm.removePlayer(msg.author)
   var content = `${msg.author.username} has quit team ${team}.`
   msg.channel.send(content)
-  msg.member.removeRole("Team"+team.toString())
+  msg.member.removeRole(msg.guild.roles.find(r => r.name ==="Team "+team.toString()))
 }
 
 client.on('message', msg => {
