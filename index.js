@@ -108,7 +108,7 @@ const tournamentStartCommand = (args, msg) => {
   console.log(tourneyStart)
   console.log(tourneyStart-Date.now())
   var content = (`The tournament will start on ${tourneyStart}.\n`)
-  msg.channel.send(content).then(sentMessage =>{})
+  msg.channel.send(content)
 }
 
 const tournamentEndCommand = (args, msg) => {
@@ -122,11 +122,20 @@ const tournamentEndCommand = (args, msg) => {
   }
   tm.reset()
 }
+
+const quitCommand = (args,msg) => {
+  var team = tm.removePlayer(msg.author)
+  var content = `${msg.author.username} has quit team ${team}.`
+  msg.channel.send(content)
+  msg.member.removeRole("Team"+team.toString())
+}
+
 client.on('message', msg => {
   var commands = []
   commands.push(['!start', startCommand])
   commands.push(['!startTournament', tournamentStartCommand])
   commands.push(['!endTournament', tournamentEndCommand])
+  commands.push(['!quit', quitCommand])
   commands.forEach(command => {
     var commandStr = command[0]
     var commandFunc = command[1]

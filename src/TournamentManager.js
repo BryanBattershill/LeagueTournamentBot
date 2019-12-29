@@ -3,6 +3,7 @@ class TournamentManager{
     constructor(){
         this.players = []
         this.teams = []
+        this.waitlist = []
     }
     addPlayers(players){
         this.players.push(...players)
@@ -41,9 +42,35 @@ class TournamentManager{
         });
         return teamStr
     }
+
+    removePlayer(playerToR){
+        for (let index = 0; index < this.players.length; index++) {
+            if (this.players[index].user===playerToR){
+                this.players.splice(index,1)
+                break
+            }
+        }
+        var teamNum = 1
+        var flag = false
+        this.teams.forEach(team => {
+            for (let index = 0; index < team.length; index++) {
+                if (team[index].user===playerToR){
+                    team.splice(index,1)
+                    flag = true
+                    break
+                }
+            }
+            if (flag === true){
+                break
+            }
+            teamNum+=1
+        });
+        return teamNum
+    }
     reset(){
         this.players = []
         this.teams = []
+        this.waitlist = []
     }
 }
 
